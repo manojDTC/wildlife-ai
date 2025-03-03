@@ -19,7 +19,7 @@ const Header = () => {
           display: "flex",
           gap: "7px",
           alignItems: "center",
-          cursor: "pointer",
+          //cursor: "pointer",
         }}
       >
         <span>

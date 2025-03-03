@@ -5,19 +5,6 @@ import AlertsIcon from "../../src/assets/images/alerts-icon.svg";
 
 const Sidebar = () => {
   return (
-    // <nav style={{ background: "#041802" }}>
-    //   <ul>
-    //     <li>
-    //       <Link to="/">Dashboard</Link>
-    //     </li>
-    //     <li>
-    //       <Link to="/profile">Profile</Link>
-    //     </li>
-    //     <li>
-    //       <Link to="/settings">Settings</Link>
-    //     </li>
-    //   </ul>
-    // </nav>
     <MenuList
       sx={{
         position: "absolute",
@@ -29,22 +16,21 @@ const Sidebar = () => {
         padding: "0",
       }}
     >
-      <MenuItem
-        sx={{
-          justifyContent: "center",
-          padding: "15px 0",
-          // background: " #53FF5391",
-        }}
-      >
-        <Link to="/">
+      <Link to="/">
+        <MenuItem
+          sx={{
+            justifyContent: "center",
+            padding: "15px 0",
+          }}
+        >
           <img src={homeIcon} alt="homeIcon"></img>
-        </Link>
-      </MenuItem>
-      <MenuItem sx={{ justifyContent: "center", padding: "15px 0" }}>
-        <Link to="/alerts">
+        </MenuItem>
+      </Link>
+      <Link to="/alerts">
+        <MenuItem sx={{ justifyContent: "center", padding: "15px 0" }}>
           <img src={AlertsIcon} alt="ticketsIcon"></img>
-        </Link>
-      </MenuItem>
+        </MenuItem>
+      </Link>
     </MenuList>
   );
 };
