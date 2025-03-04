@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
+// import HomeNew from "../pages/Home/index";
 import Sidebar from "../components/Sidebar";
 import Alerts from "../pages/Alerts";
 import Header from "../components/Header";
+import HomePage from "../pages/Home";
 
 const AppRoutes = () => {
   return (
@@ -10,7 +11,7 @@ const AppRoutes = () => {
       <Header />
       <Sidebar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/alerts" element={<Alerts />} />
       </Routes>
     </Router>
