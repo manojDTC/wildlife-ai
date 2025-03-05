@@ -37,7 +37,7 @@ const ThermalVideo = () => {
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box sx={{ display: "flex", gap: "5px" }}>
             <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
-              <InputLabel id="demo-select-small-label">
+              <InputLabel id="demo-select-small-label" sx={{ color: "white" }}>
                 Select Location
               </InputLabel>
               <Select
@@ -46,6 +46,21 @@ const ThermalVideo = () => {
                 value={age}
                 label="Select Location"
                 onChange={handleChange}
+                sx={{
+                  height: "38px",
+                  background: "#0000008f",
+                  border: "none",
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    border: "none",
+                  },
+                  "& .MuiSelect-select": {
+                    fontSize: "14px",
+                    color: "#ffffff",
+                  },
+                  "& .MuiSelect-icon": {
+                    color: "#ffffff",
+                  },
+                }}
               >
                 <MenuItem value="">
                   <em>None</em>
@@ -57,7 +72,7 @@ const ThermalVideo = () => {
             </FormControl>
 
             <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
-              <InputLabel id="demo-select-small-label">
+              <InputLabel id="demo-select-small-label" sx={{ color: "white" }}>
                 Select Camera
               </InputLabel>
               <Select
@@ -66,6 +81,21 @@ const ThermalVideo = () => {
                 value={age}
                 label="Select Camera"
                 onChange={handleChange}
+                sx={{
+                  height: "38px",
+                  background: "#0000008f",
+                  border: "none",
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    border: "none",
+                  },
+                  "& .MuiSelect-select": {
+                    fontSize: "14px",
+                    color: "#ffffff",
+                  },
+                  "& .MuiSelect-icon": {
+                    color: "#ffffff",
+                  },
+                }}
               >
                 <MenuItem value="">
                   <em>None</em>
@@ -100,61 +130,57 @@ const ThermalVideo = () => {
         // height="350"
         src="https://www.youtube.com/embed/fmszZsq6CFc?autoplay=1&mute=1"
       ></iframe>
-      <Box sx={{ position: "absolute", bottom: "10px", left: "10px" }}>
-        <Box>
-          <Typography sx={{ color: "white", fontSize: "20px" }}>
-            February 28, 2025 02:04:26 AM
-          </Typography>
-        </Box>
+
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "10px",
+          left: "10px",
+          width: "98%",
+        }}
+      >
         <Box
           sx={{
-            position: "absolute",
-            bottom: "10px",
-            left: "10px",
-            width: "98%",
+            display: "flex",
+            justifyContent: "space-between",
           }}
         >
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-            }}
+          <Typography
+            sx={{ color: "white", fontSize: "16px", alignSelf: "end" }}
           >
-            <Typography
-              sx={{ color: "white", fontSize: "16px", alignSelf: "end" }}
+            February 28, 2025 02:04:26 AM
+          </Typography>
+          <Box sx={{ background: "#0000006e" }}>
+            <Button
+              sx={{
+                display: "block",
+                justifySelf: "center",
+                lineHeight: "0",
+                padding: "0",
+              }}
             >
-              February 28, 2025 02:04:26 AM
-            </Typography>
-            <Box sx={{ background: "#0000006e" }}>
-              <Button
-                sx={{
-                  display: "block",
-                  justifySelf: "center",
-                  lineHeight: "0",
-                }}
-              >
-                <KeyboardArrowUpIcon sx={{ color: "white" }} />
-              </Button>
-              <Button>
-                <KeyboardArrowUpIcon
-                  sx={{ transform: "rotate(-90deg)", color: "white" }}
-                />
-              </Button>
-              <Button>
-                <KeyboardArrowUpIcon
-                  sx={{ transform: "rotate(90deg)", color: "white" }}
-                />
-              </Button>
-              <Button
-                sx={{
-                  display: "block",
-                  justifySelf: "center",
-                  lineHeight: "0",
-                }}
-              >
-                <KeyboardArrowDownIcon sx={{ color: "white" }} />
-              </Button>
-            </Box>
+              <KeyboardArrowUpIcon sx={{ color: "white" }} />
+            </Button>
+            <Button sx={{ padding: "0" }}>
+              <KeyboardArrowUpIcon
+                sx={{ transform: "rotate(-90deg)", color: "white" }}
+              />
+            </Button>
+            <Button sx={{ padding: "0" }}>
+              <KeyboardArrowUpIcon
+                sx={{ transform: "rotate(90deg)", color: "white" }}
+              />
+            </Button>
+            <Button
+              sx={{
+                display: "block",
+                justifySelf: "center",
+                lineHeight: "0",
+                padding: "0",
+              }}
+            >
+              <KeyboardArrowDownIcon sx={{ color: "white" }} />
+            </Button>
           </Box>
         </Box>
       </Box>

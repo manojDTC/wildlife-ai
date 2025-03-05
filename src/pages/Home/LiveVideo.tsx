@@ -8,6 +8,7 @@ import {
   FormLabel,
   InputLabel,
   MenuItem,
+  Modal,
   Radio,
   RadioGroup,
   Select,
@@ -19,6 +20,14 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 const LiveVideo = () => {
   const [age, setAge] = React.useState("");
+  const [openLiveVideoModal, setOpenLiveVideoModal] = React.useState(false);
+
+  const handleOpenLiveVideoModal = () => {
+    setOpenLiveVideoModal(true);
+  };
+  const handleCloseLiveVideoModal = () => {
+    setOpenLiveVideoModal(false);
+  };
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value);
@@ -155,6 +164,9 @@ const LiveVideo = () => {
             justifyContent: "space-between",
           }}
         >
+          <Button onClick={handleOpenLiveVideoModal}>
+            enable large screen
+          </Button>
           <Typography
             sx={{ color: "white", fontSize: "16px", alignSelf: "end" }}
           >
@@ -184,6 +196,93 @@ const LiveVideo = () => {
           </Box>
         </Box>
       </Box>
+
+      <Modal
+        open={openLiveVideoModal}
+        onClose={handleCloseLiveVideoModal}
+        aria-labelledby="child-modal-title"
+        aria-describedby="child-modal-description"
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "75%",
+            bgcolor: "background.paper",
+            border: "2px solid #000",
+            boxShadow: 24,
+            pt: 2,
+            px: 2,
+            pb: 2,
+            height: "calc(100vh - 100px)",
+          }}
+        >
+          <iframe
+            title="video"
+            style={{
+              width: "100%",
+              height: "calc(100vh - 120px)",
+              border: "0",
+            }}
+            // height="350"
+            src="https://www.youtube.com/embed/fmszZsq6CFc?autoplay=1&mute=1&modestbranding=1&rel=0&controls=1&iv_load_policy=3"
+          ></iframe>
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: "10px",
+              left: "10px",
+              width: "98%",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <Typography
+                sx={{ color: "white", fontSize: "16px", alignSelf: "end" }}
+              >
+                February 28, 2025 02:04:26 AM
+              </Typography>
+              <Box sx={{ background: "#0000006e" }}>
+                <Button
+                  sx={{
+                    display: "block",
+                    justifySelf: "center",
+                    lineHeight: "0",
+                  }}
+                >
+                  <KeyboardArrowUpIcon sx={{ color: "white" }} />
+                </Button>
+                <Button>
+                  <KeyboardArrowUpIcon
+                    sx={{ transform: "rotate(-90deg)", color: "white" }}
+                  />
+                </Button>
+                <Button>
+                  <KeyboardArrowUpIcon
+                    sx={{ transform: "rotate(90deg)", color: "white" }}
+                  />
+                </Button>
+                <Button
+                  sx={{
+                    display: "block",
+                    justifySelf: "center",
+                    lineHeight: "0",
+                  }}
+                >
+                  <KeyboardArrowDownIcon sx={{ color: "white" }} />
+                </Button>
+              </Box>
+            </Box>
+          </Box>
+          <Button onClick={handleCloseLiveVideoModal}>Close Child Modal</Button>
+        </Box>
+      </Modal>
     </Box>
   );
 };

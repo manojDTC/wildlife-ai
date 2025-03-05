@@ -10,6 +10,7 @@ const Home = () => {
     <div
       style={{
         marginLeft: "50px",
+        marginTop: "52px",
         background: "#000000e0",
         padding: "15px",
         position: "fixed",

@@ -12,6 +12,8 @@ const Header = () => {
         justifyContent: "space-between",
         padding: "8px",
         background: "#313133",
+        position: "fixed",
+        width: "99%",
       }}
     >
       <Box

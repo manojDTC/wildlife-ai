@@ -23,7 +23,7 @@ const Sidebar = () => {
   return (
     <MenuList
       sx={{
-        position: "absolute",
+        position: "fixed",
         top: "52px",
         left: "0px",
         background: "black",
